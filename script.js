@@ -1,11 +1,7 @@
 // task 5: read through the JavaScript starter code to determine where each given function is declared and where each given function is called.
 
 
-// input variables
-let image = document.querySelector(".image");
-let songName = document.querySelector(".song-name");
-let artist = document.querySelector(".artist");
-let songLink = document.querySelector(".song-link");
+
 
 // button variable
 let add = document.querySelector(".add");
@@ -14,29 +10,34 @@ let add = document.querySelector(".add");
 // task 6: declare variables for your display divs: the image url, song name, artist, and song link. Go back to the HTML to check that you are using the correct class names.
 var imgUrl;
 
-// var artistName;
+// input variables
 
-var pageUrl;
+// var pageUrl;
+
+let image = document.querySelector(".display-image");
+let songName = document.querySelector(".display-song");
+let artist = document.querySelector(".display-artist");
+let songLink = document.querySelector(".display-song-link");
 
 
 // task 7: create and populate an array (also called "list") to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
 
-const albumImageUrl = [ "https://www.google.com/url?sa=i&url=https%3A%2F%2Fsoundcloud.com%2Fhippo-campus%2Fsouth-1&psig=AOvVaw3Dv9izXa50dLShR3E97u9o&ust=1673568145652000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCID0navdwPwCFQAAAAAdAAAAABAD", 
+let albumImageUrl = [ "https://t2.genius.com/unsafe/660x660/https%3A%2F%2Fimages.genius.com%2Fa55df5293463d21aa771adc8deb97a40.960x960x1.jpg", 
 "https://t2.genius.com/unsafe/818x818/https%3A%2F%2Fimages.genius.com%2F9ef15577fbd0f0100ca6af7be356dd6f.800x800x1.jpg",
 "https://t2.genius.com/unsafe/818x818/https%3A%2F%2Fimages.genius.com%2Fa6651e251e60cc068dd19eec894819f9.1000x1000x1.png", 
 "https://t2.genius.com/unsafe/783x783/https%3A%2F%2Fimages.genius.com%2Fe1ab0ca3263ae115023bee980392a352.350x350x1.jpg",
 "https://t2.genius.com/unsafe/818x818/https%3A%2F%2Fimages.genius.com%2F9fc3d05858ba15af6d48cf9e8d08f0bc.225x225x1.jpg" ];
 
-const songNames = [ "south", "Deadbeat Girl", "Live At The Swamp", "CDMX", "Melancoly"];
+let songNames = [ "south", "Deadbeat Girl", "Live At The Swamp", "CDMX", "Melancoly"];
 
-const artistName = ["Hippo Campus" ,
+let artistName = ["Hippo Campus" ,
 "Day wave",
 "Peach pit",
 "Last dinosaurs",
 "Human Tetris"
 ]; 
 
-const soundLink = ["https://youtu.be/Ure4jaEue5U",
+let soundLink = ["https://youtu.be/Ure4jaEue5U",
 "https://youtu.be/JWewokoSdu0" , 
 "https://youtu.be/C2DEoyz2GSA",
 "https://youtu.be/3VIUVndZn6Y",
@@ -77,7 +78,7 @@ let Melancoly = new websiteDetails("https://t2.genius.com/unsafe/818x818/https%3
 
 function addSongInfo() {
 
-let  
+//let  
 // task 9: declare a variable to save the user input of the image url. Declare three more variables that save user input: One for the song names, one for the artists, and a last one for the song links.
 
 
@@ -102,14 +103,27 @@ function emptyDisplay() {
 function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-for(let i = 0; index)  
-Image-URL.insertAdjacentHTML("beforeend", `<image>${}</image>`);
-Song-Name.insertAdjacenHTML("beforeend", `<song-name>${}</song-name>`);
-Artist.insertAdjacentHTML("beforeend",`<artist>${}</artist>`)
-Song-Link-Address.insertAdjacentHTML("beforeend", `<song-link>${}</song-link>`)
-}
-//add the name of the .lenght to line 105 and loop the thing.
+  for(let i = 0; i <  albumImageUrl.length; i++){
+    let imageUrl = albumImageUrl[i]; 
+    image.insertAdjacentHTML("beforeend", `<img src ="${imageUrl}">`)
+  };
 
+  for(let i = 0; i < songNames.length; i++){
+    let name = songNames[i];
+    songName.insertAdjacentHTML("beforeend", `<p>${name}</p>`)
+  };
+
+    for(let i = 0; i < artistName.length; i++){  
+      let item = artistName[i];
+      artist.insertAdjacentHTML("beforeend",`<p>${item}</p>`)
+    };
+  
+    for(let i = 0;i < soundLink.lenght; i++){
+      let item = soundLink[i];
+      Song_Link_Address.insertAdjacentHTML("beforeend", `< a href = ${item}>Listen         the song here<a/>`)
+    }
+  console.log(soundLink)
+}
 // click event to add and display songs
 add.onclick = function() {
   addSongInfo();
@@ -117,4 +131,5 @@ add.onclick = function() {
 };
 
 // function call to display stored songs
+
 displaySongInfo();
