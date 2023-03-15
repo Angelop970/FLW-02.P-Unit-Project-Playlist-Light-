@@ -11,13 +11,16 @@ let add = document.querySelector(".add");
 var imgUrl;
 
 // input variables
-
+let image = document.querySelector(".image");
+let songName = document.querySelector(".song-name");
+let artist = document.querySelector(".artist");
+let songLink = document.querySelector(".song-link");
 // var pageUrl;
 
-let image = document.querySelector(".display-image");
-let songName = document.querySelector(".display-song");
-let artist = document.querySelector(".display-artist");
-let songLink = document.querySelector(".display-song-link");
+let userImage = document.querySelector(".display-image");
+let userSongName = document.querySelector(".display-song");
+let userArtist = document.querySelector(".display-artist");
+let userSongLink = document.querySelector(".display-link");
 
 
 // task 7: create and populate an array (also called "list") to store your image urls. Create three more arrays. One to store your song names, one for the artists, and a last one for the song links.
@@ -42,7 +45,6 @@ let soundLink = ["https://youtu.be/Ure4jaEue5U",
 "https://youtu.be/C2DEoyz2GSA",
 "https://youtu.be/3VIUVndZn6Y",
 "https://youtu.be/l8tmbCP7zaY" 
-  
 ]; 
 
 
@@ -101,28 +103,28 @@ function emptyDisplay() {
 
 
 function displaySongInfo() {
-
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
   for(let i = 0; i <  albumImageUrl.length; i++){
     let imageUrl = albumImageUrl[i]; 
-    image.insertAdjacentHTML("beforeend", `<img src ="${imageUrl}">`)
+    userImage.insertAdjacentHTML("beforeend", `<img src ="${imageUrl}">`)
   };
 
   for(let i = 0; i < songNames.length; i++){
     let name = songNames[i];
-    songName.insertAdjacentHTML("beforeend", `<p>${name}</p>`)
+    userSongName.insertAdjacentHTML("beforeend", `<p>${name}</p>`)
   };
 
     for(let i = 0; i < artistName.length; i++){  
       let item = artistName[i];
-      artist.insertAdjacentHTML("beforeend",`<p>${item}</p>`)
+      userArtist.insertAdjacentHTML("beforeend",`<p>${item}</p>`)
     };
   
-    for(let i = 0;i < soundLink.lenght; i++){
-      let item = soundLink[i];
-      Song_Link_Address.insertAdjacentHTML("beforeend", `< a href = ${item}>Listen         the song here<a/>`)
-    }
-  console.log(soundLink)
+  for(let i = 0; i < soundLink.length; i++){  
+  let tuneLink = soundLink[i];
+  userSongLink.insertAdjacentHTML("beforeend", `<a href="${tuneLink}">Listen the 
+ song here<a/>`)
+    };
+  
 }
 // click event to add and display songs
 add.onclick = function() {
